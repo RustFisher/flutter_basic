@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/samples/navigation/navigator_screen.dart';
+import 'package:flutter_basic/samples/gestures/handling_gestures.dart';
 
 void main() => runApp(new MyApp());
 
@@ -48,7 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: new Text("Navigation sample"),
               textColor: _defColor,),
             new MaterialButton(
-              onPressed: null, child: new Text("coming soon..."),),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => (HandlingGesturesPage()))
+                );
+              }, child: new Text("Handling gestures"),),
             new MaterialButton(
               onPressed: null, child: new Text("coming soon..."),),
             new MaterialButton(
@@ -60,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: new Icon(Icons.add),
         onPressed: () {},
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
