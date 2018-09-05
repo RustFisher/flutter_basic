@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/samples/navigation/navigator_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -28,14 +29,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _defColor = Color.fromARGB(255, 0, 0, 0);
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
       body: new Center(
         child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            new MaterialButton(
+              onPressed: () {
+                print("跳转去示例界面");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => (FirstScreen()))
+                );
+              },
+              child: new Text("Navigation sample"),
+              textColor: _defColor,),
+            new MaterialButton(
+              onPressed: null, child: new Text("coming soon..."),),
+            new MaterialButton(
+              onPressed: null, child: new Text("coming soon..."),),
+            new MaterialButton(
+              onPressed: null, child: new Text("coming soon..."),),
           ],
         ),
       ),
