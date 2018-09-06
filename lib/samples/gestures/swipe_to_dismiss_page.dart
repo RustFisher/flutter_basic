@@ -11,7 +11,7 @@ class SwipeToDismissPage extends StatefulWidget {
 }
 
 class SwipeState extends State<SwipeToDismissPage> {
-  final items = List<String>.generate(10, (i) => "Item $i"); // 列表必须放在外面定义
+  final items = List<String>.generate(20, (i) => "Item $i"); // 列表必须放在外面定义
 
   @override
   Widget build(BuildContext context) {
