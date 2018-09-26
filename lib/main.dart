@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/samples/navigation/navigator_screen.dart';
 import 'package:flutter_basic/samples/gestures/handling_gestures.dart';
+import 'package:flutter_basic/samples/navigation/returning_data_page.dart';
+import 'package:flutter_basic/samples/navigation/todo_pages.dart';
 import 'package:flutter_basic/samples/networking/fetching_data.dart';
 
 void main() => runApp(new MyApp());
@@ -62,13 +64,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
+                        builder: (context) => (ReturningDataScreen())));
+              },
+              child: new Text("Returning data from page"),
+            ),
+            new MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
                         builder: (context) => (FetchingDataPage1())));
               },
               child: new Text("获取数据"),
             ),
             new MaterialButton(
-              onPressed: null,
-              child: new Text("coming soon..."),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => (TodoListScreen())));
+              },
+              child: new Text("Todo List Demo"),
             ),
           ],
         ),
